@@ -40,10 +40,15 @@ library(twitteR)
 
 ```{r eval = FALSE}
 # You'd need to set global options with an authenticated app
-setup_twitter_oauth(getOption("twitter_consumer_key"),
-                    getOption("twitter_consumer_secret"),
-                    getOption("twitter_access_token"),
-                    getOption("twitter_access_token_secret"))
+#setup_twitter_oauth(getOption("twitter_consumer_key"),
+#                    getOption("twitter_consumer_secret"),
+#                    getOption("twitter_access_token"),
+#                    getOption("twitter_access_token_secret"))
+
+setup_twitter_oauth("33SYzFa0ryc5AYRpXAJaEHLr7",
+                    "VTvBluu6Ir6kcN8VJIeArQJ4YW8nfaoLVqaX7ebLlVyBuU4QBG",
+                    "905635427360669696-rvIZvxqZ9Q2t4mdH3GdMYkk9Dkkyhaq",
+                    "ksbjrKfp3esAwSx7mqUibm1MPtmRZDu3XlYFFULfDlwnk")
 
 # We can request only 3200 tweets at a time; it will return fewer
 # depending on the API
@@ -54,7 +59,7 @@ trump_tweets_df <- tbl_df(map_df(trump_tweets, as.data.frame))
 ```{r trump_tweets_df}
 # if you want to follow along without setting up Twitter authentication,
 # just use my dataset:
-load(url("http://varianceexplained.org/files/trump_tweets_df.rda"))
+#load(url("http://varianceexplained.org/files/trump_tweets_df.rda"))
 ```
 
 We clean this data a bit, extracting the source application. (We're looking only at the iPhone and Android tweets- a much smaller number are from the web client or iPad).
