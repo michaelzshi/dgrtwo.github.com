@@ -52,7 +52,7 @@ setup_twitter_oauth("33SYzFa0ryc5AYRpXAJaEHLr7",
 
 # We can request only 3200 tweets at a time; it will return fewer
 # depending on the API
-trump_tweets <- userTimeline("realDonaldTrump", n = 3200)
+trump_tweets <- userTimeline("realDonaldTrump", n = 3200, includeRts = T)
 trump_tweets_df <- tbl_df(map_df(trump_tweets, as.data.frame))
 ```
 
